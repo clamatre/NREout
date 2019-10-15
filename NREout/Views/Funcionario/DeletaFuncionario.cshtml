@@ -1,0 +1,80 @@
+﻿@model NREout.Models.FuncionarioModel
+
+@{
+    ViewBag.Title = "DeletaFuncionario";
+}
+
+<h2>DeletaFuncionario</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>FuncionarioModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email_pessoal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email_pessoal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cpf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cpf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefone_pessoal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefone_pessoal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email_funcional)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email_funcional)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefone_funcional)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefone_funcional)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<NREout.Models.FuncionarioModel>
+@{
+    ViewBag.Title = "CMT TESTE";
+}
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+    }
+</style>
+<h2>Index</h2>
+<p>
+    @Html.ActionLink("Criar Funcionário", "AdicionaFuncionario")
+</p>
+<table>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Nome)</th>
+        <th>@Html.DisplayNameFor(model => model.email_pessoal)</th>
+        <th>@Html.DisplayNameFor(model => model.rg)</th>
+        <th>@Html.DisplayNameFor(model => model.cpf)</th>
+        <th>@Html.DisplayNameFor(model => model.telefone_pessoal)</th>
+        <th>@Html.DisplayNameFor(model => model.nre)</th>
+        <th>@Html.DisplayNameFor(model => model.municipio)</th>
+        <th>@Html.DisplayNameFor(model => model.cargo_funcao)</th>
+        <th>@Html.DisplayNameFor(model => model.email_funcional)</th>
+        <th>@Html.DisplayNameFor(model => model.telefone_funcional)</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+            <td>@Html.DisplayFor(modelItem => item.email_pessoal)</td>
+            <td>@Html.DisplayFor(modelItem => item.rg)</td>
+            <td>@Html.DisplayFor(modelItem => item.cpf)</td>
+            <td>@Html.DisplayFor(modelItem => item.telefone_pessoal)</td>
+            <td>@Html.DisplayFor(modelItem => item.nre)</td>
+            <td>@Html.DisplayFor(modelItem => item.municipio)</td>
+            <td>@Html.DisplayFor(modelItem => item.cargo_funcao)</td>
+            <td>@Html.DisplayFor(modelItem => item.email_funcional)</td>
+            <td>@Html.DisplayFor(modelItem => item.telefone_funcional)</td>
+            <td>
+                @Html.ActionLink("Editar", "EditarFuncionario", new { id = item.idFuncionario }) |
+                @Html.ActionLink("Deletar", "Deletafuncionario", new { id = item.idFuncionario })
+            </td>
+        </tr>
+    }
+</table>
