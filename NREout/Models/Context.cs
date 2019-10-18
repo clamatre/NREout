@@ -18,14 +18,16 @@ namespace NREout.Models
 
 
         //banco de dados
-        public Context() : base("Data Source=10.74.3.136;Initial Catalog=DB.NRE;User ID=nre;Password=nre12345")
+      //  public Context() : base("Data Source=10.74.7.163;Initial Catalog=DB.NRE;User ID=nre;Password=nre12345")
+        public Context() : base("Data Source = 10.74.7.163; Initial Catalog = UserManager; Integrated Security = True;User ID=user;Password=seed")
+        //public Context() : base("Data Source =ESEED48RY8R; Initial Catalog = UserManager; Integrated Security = True;User ID=user;Password=seed")
         {
             Database.SetInitializer<Context>(null);
         }
 
 
         //tabelas
-        public DbSet<FuncionarioModel> DBFuncionario { get; set; }
+        public DbSet<FuncionarioModel> Usuario { get; set; }
 
 
     }

@@ -18,32 +18,30 @@ namespace NREout.Models
 
             listaFuncionarios.Add(new FuncionarioModel
             {
-                idFuncionario = 1,
+                id = 1,
                 Nome = "Jose Carlos",
-                email_pessoal = "jsC@homtail.com",
+                //email_pessoal = "jsC@homtail.com",
                 rg = 1234567890,
                 cpf = 1234566780,
-                telefone_pessoal = "01020304",
-                nre = 0,
-                municipio = 0,
-                cargo_funcao = 0,
-                email_funcional = "jsC@seed.pr.gov.br",
-                telefone_funcional = "04030201"
+                telefone = "01020304",
+                id_nre = 0,
+                //municipio = 0,
+                //cargo_funcao = 0,
+                email = "jsC@seed.pr.gov.br"
             }); ; ;
 
             listaFuncionarios.Add(new FuncionarioModel
             {
-                idFuncionario = 2,
+                id = 2,
                 Nome = "Ana Maria",
-                email_pessoal = "ana@homtail.com",
+                //email_pessoal = "ana@homtail.com",
                 rg = 1234567890,
                 cpf = 1234566780,
-                telefone_pessoal = "01020304",
-                nre = 0,
-                municipio = 0,
-                cargo_funcao = 0,
-                email_funcional = "anamaria@seed.pr.gov.br",
-                telefone_funcional = "04030201"
+                telefone = "01020304",
+                id_nre = 0,
+                //municipio = 0,
+                //cargo_funcao = 0,
+                email = "anamaria@seed.pr.gov.br"
             }); ;
 
             /*sql
@@ -82,7 +80,7 @@ namespace NREout.Models
         {
             Context context = new Context();
 
-            context.DBFuncionario.Add(funcionarioModelo);
+            context.Usuario.Add(funcionarioModelo);
             context.SaveChanges();
             listaFuncionarios.Add(funcionarioModelo);
         }
@@ -91,13 +89,13 @@ namespace NREout.Models
         {
             foreach (FuncionarioModel _funcionario in listaFuncionarios)
             {
-                if (_funcionario.idFuncionario == idFuncionario)
+                if (_funcionario.id == idFuncionario)
                 {
 
                     Context context = new Context();
-                    var dep = context.DBFuncionario.Where(d => d.idFuncionario == idFuncionario).First();
+                    var dep = context.Usuario.Where(d => d.id == idFuncionario).First();
 
-                    context.DBFuncionario.Remove(_funcionario);
+                    context.Usuario.Remove(_funcionario);
                     context.SaveChanges();
                     listaFuncionarios.Add(_funcionario);
 
@@ -109,14 +107,14 @@ namespace NREout.Models
         {
             foreach (FuncionarioModel _funcionario in listaFuncionarios)
             {
-                if (_funcionario.idFuncionario == idFuncionario)
+                if (_funcionario.id == idFuncionario)
                 {
                     Context context = new Context();
 
-                    var dep = context.DBFuncionario.Where(d => d.idFuncionario == idFuncionario).First();
+                    var dep = context.Usuario.Where(d => d.id == idFuncionario).First();
                     try
                     {
-                        context.DBFuncionario.Remove(_funcionario);
+                        context.Usuario.Remove(_funcionario);
                         context.SaveChanges();
                     }
                     catch (Exception e)
@@ -133,7 +131,7 @@ namespace NREout.Models
         {
             FuncionarioModel _funcionarioModel = null;
             foreach (FuncionarioModel _funcionario in listaFuncionarios)
-                if (_funcionario.idFuncionario == idFuncionario)
+                if (_funcionario.id == idFuncionario)
                     _funcionarioModel = _funcionario;
             return _funcionarioModel;
         }
