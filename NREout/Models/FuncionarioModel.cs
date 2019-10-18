@@ -43,6 +43,11 @@ namespace NREout.Models
         // [Required]
         public int cpf { get; set; }
 
+        [DisplayName("numfav")]
+        // [Required]
+        public int numfav { get; set; }
+
+
         [DisplayName("Telefone Pessoal")]
         public string telefone_pessoal { get; set; }
 
