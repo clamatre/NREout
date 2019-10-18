@@ -10,7 +10,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace NREout.Models
 {
-    [Table("DBFuncionario")]
+    [Table("Usuario")]
     public class FuncionarioModel
     {
 
@@ -20,7 +20,7 @@ namespace NREout.Models
         }
         */
         [Key]
-        public int? idFuncionario { get; set; }
+        public int? id { get; set; }
 
 
 
@@ -28,11 +28,11 @@ namespace NREout.Models
         [StringLength(50, ErrorMessage = "O campo permite no máximo 50 caracteres!")]
         public string Nome { get; set; }   //nome do funcionario
 
-        [DisplayName("E-mail Pessoal")]
-        [StringLength(50)]
-        // [Required(ErrorMessage = "Informe o seu E-mail Pessoal.")]
-        //[RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", ErrorMessage = "E-mail inválido.")]
-        public string email_pessoal { get; set; }
+        //[DisplayName("E-mail Pessoal")]
+        //[StringLength(50)]
+        //// [Required(ErrorMessage = "Informe o seu E-mail Pessoal.")]
+        ////[RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", ErrorMessage = "E-mail inválido.")]
+        //public string email_pessoal { get; set; }
 
 
         [DisplayName("RG")]
@@ -43,36 +43,29 @@ namespace NREout.Models
         // [Required]
         public int cpf { get; set; }
 
-        [DisplayName("numfav")]
-        // [Required]
-        public int numfav { get; set; }
-
-
         [DisplayName("Telefone Pessoal")]
-        public string telefone_pessoal { get; set; }
+        public string telefone { get; set; }
 
 
         [DisplayName("NRE")]
-        public NRECMT.NRE nre { get; set; }
+        public NRECMT.NRE id_nre { get; set; }
 
-        [DisplayName("Município")]     //*************
-        public NRECMT.Municipio municipio { get; set; }        //***************
+        //[DisplayName("Município")]     //*************
+        //public NRECMT.Municipio municipio { get; set; }        //***************
 
-        [DisplayName("Cargo/Função")]
-        public NRECMT.cargo_funcao cargo_funcao { get; set; }
+        //[DisplayName("Cargo/Função")]
+        //public NRECMT.cargo_funcao cargo_funcao { get; set; }
 
         [DisplayName("E-mail Funcional")]
         [StringLength(50)]
         // [Required(ErrorMessage = "Informe o seu E-mail Funcional.")]
         // [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", ErrorMessage = "E-mail inválido.")]
-        public string email_funcional { get; set; }
+        public string email { get; set; }
 
-        [DisplayName("Telefone Funcional")]
+        //[DisplayName("Telefone Funcional")]
 
-        public string telefone_funcional { get; set; }
-        // public DateTime CriadoEm { get; set; }
-
-
+        //public string telefone_funcional { get; set; }
+        //// public DateTime CriadoEm { get; set; }
 
     }
 
